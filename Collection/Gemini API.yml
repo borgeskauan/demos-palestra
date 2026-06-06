@@ -1,0 +1,34 @@
+info:
+  name: Gemini API
+  type: http
+  seq: 1
+
+http:
+  method: post
+  url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent
+  headers:
+    - name: x-goog-api-key
+      value: " AIzaSyCIWHfFxfW1aft8o26k51aSEcYu2SoD_YM"
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "contents": [
+          {
+            "parts": [
+              {
+                "text": "Analise a capacidade de crédito do cliente com base nos seguintes dados: {\"nome\":\"Carlos Silva\",\"idade\":34,\"profissao\":\"Engenheiro de Software\",\"renda_mensal\":12500,\"score_credito\":782,\"historico_pagamentos\":\"95% das faturas pagas em dia nos últimos 5 anos\",\"dividas_atuis\":3200,\"limite_utilizado_percentual\":28,\"tempo_relacionamento_bancario_anos\":7,\"movimentacao_financeira_mensal\":18500,\"historico_inadimplencia\":\"Nenhum registro\"}; retorne somente uma linha em JSON: {\"aprovado\":true/false,\"score_risco\":0-100,\"limite_sugerido\":0,\"motivo\":\"curto\"}."
+              }
+            ]
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
